@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI TikTok Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div class="logo">✦</div>
+    <div><h1>AI TikTok Studio</h1><p>ONE-CLICK SHORT VIDEO FACTORY</p></div>
+    <span class="pill">WINDOWS DESKTOP · V2</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div><div class="eyebrow">AUTOMATED CONTENT PIPELINE</div><h2>Từ ý tưởng đến<br><em>video hoàn chỉnh.</em></h2>
+      <p>AI viết kịch bản, tìm footage, tạo giọng đọc, ghép phụ đề và xuất MP4 dọc 15 giây.</p></div>
+      <div class="preview"><div class="play">▶</div><b>15 SEC</b><small>9:16 · 1080 × 1920</small></div>
+    </section>
+    <section class="panel">
+      <div class="section-title"><span>01 / KẾT NỐI DỊCH VỤ</span><small>API key được lưu cục bộ trong trình duyệt ứng dụng</small></div>
+      <div class="grid">
+        <label>OpenAI API Key<input id="openai" type="password" placeholder="sk-..." autocomplete="off"></label>
+        <label>Pexels API Key<input id="pexels" type="password" placeholder="Pexels API key" autocomplete="off"></label>
+      </div>
+      <div class="grid lower">
+        <label>Model tạo kịch bản<input id="model" value="gpt-5.5"></label>
+        <label>Giọng đọc<select id="voice"><option value="alloy">Alloy · Trung tính, rõ</option><option value="nova">Nova · Năng động</option><option value="shimmer">Shimmer · Mềm mại</option><option value="echo">Echo · Trầm</option></select></label>
+      </div>
+      <div class="section-title topic-title"><span>02 / CHỦ ĐỀ VIDEO</span><small>Để trống để AI tự chọn</small></div>
+      <label>Chủ đề hoặc ngách nội dung<input id="topic" placeholder="Ví dụ: tâm lý học, bí ẩn, tiền bạc... hoặc để trống"></label>
+      <div class="actions">
+        <button id="generate" class="primary"><span>✦</span> TẠO VIDEO 15 GIÂY</button>
+        <button id="open" class="secondary">MỞ THƯ MỤC VIDEO ↗</button>
+      </div>
+      <div class="hint">Một lần bấm sẽ chạy toàn bộ quy trình. Không cần Python hoặc thao tác dựng video thủ công.</div>
+    </section>
+    <section class="panel progress-panel">
+      <div class="section-title"><span>03 / TIẾN TRÌNH SẢN XUẤT</span><span id="state" class="state">SẴN SÀNG</span></div>
+      <div class="progress"><div id="bar"></div></div>
+      <div id="log" class="log"><div class="muted">Đang chờ lệnh tạo video...</div></div>
+      <div id="result" class="result"></div>
+    </section>
+  </main>
+  <footer>AI TikTok Studio · Video stock từ Pexels · TTS từ OpenAI · Hãy kiểm tra nội dung và quyền sử dụng trước khi đăng.</footer>
+</div>
+<script src="renderer.js"></script>
+</body>
+</html>

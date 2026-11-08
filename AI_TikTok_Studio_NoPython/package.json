@@ -1,0 +1,31 @@
+{
+  "name": "ai-tiktok-studio",
+  "version": "2.0.0",
+  "description": "One-click AI TikTok clip generator",
+  "main": "src/main.js",
+  "author": "AI TikTok Studio",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^36.3.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.aitiktok.studio",
+    "productName": "AI TikTok Studio",
+    "directories": { "output": "release" },
+    "files": ["src/**/*", "package.json"],
+    "win": {
+      "target": ["nsis", "portable"],
+      "artifactName": "AI-TikTok-Studio-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}
